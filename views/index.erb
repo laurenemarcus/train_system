@@ -1,0 +1,22 @@
+<h1>Train Station</h1>
+
+<p>Create a new line:</p>
+
+<form action="/lines" method="post">
+  <label for="line_name">Assign a name to your line:</label>
+  <input id="line_name" name="line_name" type="text">
+
+  <button type="submit">Add line</button>
+</form>
+
+<% if @lines.any?() %>
+<p>Click on a line to see its stations:</p>
+
+<ul>
+  <% @lines.each do |line| %>
+  <li><a href="/lines/<%= line.id() %>"><%= line.line_name() %></a></li>
+  <% end %>
+</ul>
+<% else %>
+<p>There are no lines yet!</p>
+<% end %>
