@@ -36,7 +36,7 @@ class Line
     stations.each() do |station|
       station_name = station.fetch("station_name")
       station_location = station.fetch("station_location")
-      id = task.fetch("id").to_i()
+      id = station.fetch("id").to_i()
       list_stations.push(Station.new({ :station_name => station_name, :station_location => station_location, :id => id}))
     end
     list_stations
