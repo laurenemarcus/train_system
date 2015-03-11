@@ -25,6 +25,17 @@ Run the following command to access psql:
 
 `psql`
 
+Run the following commands in `psql` to create the databases:
+
+`CREATE DATABASE train_system;`
+
+`\c train_system`
+
+`CREATE TABLE lines (id serial PRIMARY KEY, line_name varchar);`
+
+`CREATE TABLE stations (id serial PRIMARY KEY, station_name varchar, station_location varchar);`
+
+`CREATE DATABASE train_system_test WITH TEMPLATE train_system;`
 
 Run the following command to install bundler:
 
